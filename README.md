@@ -11,6 +11,7 @@ But the private key should stay private, should it ?
 
 ## Steps
 
+- duplicate src/config/default.json and rename it to env.json
 - fill up env.json with the right keys
 - install `yarn`
 - start `yarn start`
