@@ -15,7 +15,3 @@ But the private key should stay private, should it ?
 - fill up env.json with the right keys
 - install `yarn`
 - start `yarn start`
-
-- call me, send a mail, choose a time for a drink, to give me feedback !
-
-...Well I wanted to deploy on surge.sh, but all the code is visible, like the keys.
