@@ -8,8 +8,6 @@ const FETCH_LIST = 'FETCH_LIST';
 const heroes = (state = [], action) => {
   switch (action.type) {
     case FETCH_LIST:
-      console.log(action);
-
       return action.data;
     default:
       return state;
@@ -19,11 +17,17 @@ const heroes = (state = [], action) => {
 export default heroes;
 
 export const fetchList = () => dispatch =>
-  axios.get(`${BASE_URL}/v1/public/characters`, {
-    params: getQueryParams()
-  })
-    .then(response => console.log(response.data) || dispatch({
-      type: FETCH_LIST,
-      data: response.data.data.results
-    }))
+  // TODO: use react-promise middleware to auto dispatch laoding, success and fail actions
+  axios
+    .get(`${BASE_URL}/v1/public/characters`, {
+      params: getQueryParams(),
+    })
+    .then(response =>
+      dispatch({
+        type: FETCH_LIST,
+        data: response.data.data.results,
+      })
+    )
+    // TODO: dispatch error action
+    // eslint-disable-next-line no-console
     .catch(error => console.log(error));

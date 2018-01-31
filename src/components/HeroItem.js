@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardImg, CardBody, CardTitle, CardFooter } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const HeroItem = ({ id, name, imgUrl }) => {
   return (
@@ -12,7 +13,9 @@ const HeroItem = ({ id, name, imgUrl }) => {
       </CardBody>
       <CardFooter>
         <small>
-          <FontAwesome name="book" /> Detail
+          <Link to={`/details/${id}`}>
+            <FontAwesome name="book" /> Detail
+          </Link>
         </small>{' '}
         |{' '}
         <small>
