@@ -1,3 +1,6 @@
+# hide api keys
+src/config/env.json
+
 # JetBrains
 .idea/
 
