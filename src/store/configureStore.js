@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import todoApp from '../reducers';
+import reducers from '../reducers';
 import thunk from 'redux-thunk';
 
 const configureStore = () => {
@@ -10,7 +10,7 @@ const configureStore = () => {
     middlewares.push(window.__REDUX_DEVTOOLS_EXTENSION__());
   }
 
-  return createStore(todoApp, applyMiddleware(...middlewares));
+  return createStore(reducers, applyMiddleware(...middlewares));
 };
 
 export default configureStore;

@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({ heroes: (state = []) => state });
+import heroes from './heroesDuck';
+
+export default combineReducers({ heroes });
